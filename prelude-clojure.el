@@ -3,10 +3,10 @@
 ;; Copyright (c) 2011-2012 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: http://batsov.com/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
-;; Package-Requires: ((prelude-lisp "1.0.0") (clojure-mode "1.11.5"))
+;; Package-Requires: ((prelude-lisp "1.0.0") (clojure-mode "1.11.5") (nrepl "0.1.4"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -36,10 +36,6 @@
 ;;;###autoload
 (progn
   (require 'prelude-lisp)
-
-  ;; To start SLIME in your Clojure project:
-  ;; 1. lein plugin install swank-clojure 1.3.1 (or newer)
-  ;; 2. Invoke M-x clojure-jack-in from a project
 
   (eval-after-load 'clojure-mode
     '(progn

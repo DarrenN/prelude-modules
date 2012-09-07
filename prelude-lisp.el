@@ -6,7 +6,7 @@
 ;; URL: http://batsov.com/emacs-prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
-;; Package-Requires: ((prelude-programming "1.0.0") (paredit "22"))
+;; Package-Requires: ((prelude-programming "1.0.0") (paredit "22") (rainbow-delimiters "1.3.4"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -40,13 +40,15 @@
 
   ;; a great lisp coding hook
   (defun prelude-lisp-coding-defaults ()
-    (paredit-mode +1))
+    (paredit-mode +1)
+    (rainbow-delimiters-mode +1))
 
   (setq prelude-lisp-coding-hook 'prelude-lisp-coding-defaults)
 
   ;; interactive modes don't need whitespace checks
   (defun prelude-interactive-lisp-coding-defaults ()
     (paredit-mode +1)
+    (rainbow-delimiters-mode +1)
     (prelude-turn-off-whitespace))
 
   (setq prelude-interactive-lisp-coding-hook 'prelude-interactive-lisp-coding-defaults))

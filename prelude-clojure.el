@@ -45,7 +45,20 @@
        (setq prelude-clojure-mode-hook 'prelude-clojure-mode-defaults)
 
        (add-hook 'clojure-mode-hook (lambda ()
-                                      (run-hooks 'prelude-clojure-mode-hook))))))
+                                      (run-hooks 'prelude-clojure-mode-hook)))))
+
+  (eval-after-load 'nrepl
+    '(progn
+       (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+
+       (defun prelude-nrepl-mode-defaults ()
+         (run-hooks 'prelude-interactive-lisp-coding-hook))
+
+       (setq prelude-nrepl-mode-hook 'prelude-nrepl-mode-defaults)
+
+       (add-hook 'nrepl-mode-hook (lambda ()
+                                    (run-hooks 'prelude-nrepl-mode-hook))))))
+
 (provide 'prelude-clojure)
 
 ;;; prelude-clojure.el ends here

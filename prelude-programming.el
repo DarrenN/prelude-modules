@@ -113,9 +113,8 @@
     "Default coding hook, useful with any programming language."
     (flyspell-prog-mode)
     (guru-mode +1)
+    (whitespace-mode +1)
     (prelude-local-comment-auto-fill)
-    (prelude-turn-on-whitespace)
-    (prelude-turn-on-abbrev)
     (prelude-add-watchwords)
     ;; keep the whitespace decent all the time (in this buffer)
     (add-hook 'before-save-hook 'whitespace-cleanup nil t))

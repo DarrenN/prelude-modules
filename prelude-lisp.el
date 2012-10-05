@@ -49,7 +49,7 @@
   (defun prelude-interactive-lisp-coding-defaults ()
     (paredit-mode +1)
     (rainbow-delimiters-mode +1)
-    (prelude-turn-off-whitespace))
+    (whitespace-mode -1))
 
   (setq prelude-interactive-lisp-coding-hook 'prelude-interactive-lisp-coding-defaults))
 

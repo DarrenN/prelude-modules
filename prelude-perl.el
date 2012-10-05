@@ -37,6 +37,8 @@
   ;; use cperl-mode instead of perl-mode
   (defalias 'perl-mode 'cperl-mode)
 
+  (define-key 'help-command "P" 'cperl-perldoc)
+
   (defun prelude-cperl-mode-defaults ()
     (setq cperl-indent-level 4)
     (setq cperl-continued-statement-offset 8)
@@ -60,7 +62,8 @@
 
   (setq prelude-cperl-mode-hook 'prelude-cperl-mode-defaults)
 
-  (add-hook 'cperl-mode-hook (lambda () (run-hooks 'prelude-cperl-mode-hook)) t))
+  (add-hook 'cperl-mode-hook (lambda ()
+                               (run-hooks 'prelude-cperl-mode-hook)) t))
 
 (provide 'prelude-perl)
 

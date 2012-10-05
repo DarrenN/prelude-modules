@@ -48,6 +48,8 @@
   ;; We never want to edit Rubinius bytecode
   (add-to-list 'completion-ignored-extensions ".rbc")
 
+  (define-key 'help-command (kbd "R") 'yari)
+
   (eval-after-load 'ruby-mode
     '(progn
        (defun prelude-ruby-mode-defaults ()
@@ -58,9 +60,7 @@
          (ruby-end-mode +1)
          (ruby-tools-mode +1)
          ;; CamelCase aware editing operations
-         (subword-mode +1)
-         ;; bind yari in the local keymap
-         (local-set-key (kbd "C-h r") 'yari))
+         (subword-mode +1))
 
        (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
 

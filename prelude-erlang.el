@@ -52,7 +52,7 @@
 
   (defun erlang-rebar-compile ()
     (interactive)
-    (let* ((dir (or (projectile-get-project-root)
+    (let* ((dir (or (projectile-project-root)
                     (file-name-directory (buffer-file-name))))
            (pref (concat "cd " dir " && "))
            (cmd (cond ((file-exists-p (expand-file-name "rebar" dir))    "./rebar compile")
